@@ -1,0 +1,24 @@
+/* Properti Box Model */
+.kotak {
+ 
+/* Konten */
+ width: 300px;
+ height: 150px;
+
+/* Padding: shorthand (atas kanan bawah kiri) */
+padding:20px 30px 20px 30px;
+/* atau: padding: 20px 30px; (atas-bawah | kiri-kanan) */
+/* atau: padding: 20px; (semua sisi sama) */
+
+/* Border */
+border: 5px solid #ab26af;
+/* Shorthand: ketebalan jenis warna */
+border-radius: 8px;/*Sudut membulat */
+
+/* Margin */
+margin: 20px auto; /* atas-bawah: 20px, kiri-kanan: auto (tengah) */
+
+/* box-sizing: border-box SANGAT DIREKOMENDASIKAN! */
+/* Membuat width & height sudah termasuk padding & border */
+box-sizing: border-box;
+}
