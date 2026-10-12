@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> BAB 5 - CSS Layout & Box Model</title>
+    <link rel="stylesheet" href="layout-bab5.css">
+</head>
+<body>
+    
+    <!-- BAGIAN 1: Box Model -->
+    <section class="demo-section">
+        <h2>Box Model</h2>
+        <div class="kotak kotak-biru"> Kotak Biru (content-box)</div>
+        <div class="kotak kotak-hijau"> Kotak Hijau (border-box)</div>
+        <div class="kotak kotak-bulat"> Kotak Buluat (border-radius)</div>
+    </section>
+
+    <!--BAGIAN 2: Display-->
+    <section class="demo-section">
+        <h2>Properti Display</h2>
+        <div class="demo-display">
+            <span class="item-block">display: block</span>
+            <span class="item-inline">Display: inline</span>
+            <span class="item-inline">display: inline</span>
+            <span class="item-iblock">inline-block</span>
+            <span class="item-iblock">inline-block</span>
+        </div>
+    </section>
+
+    <!-- BAGIAN 3: Position-->
+    <section class="demo-section">
+        <h2>Properti Position</h2>
+        <div class="area-position">
+            <div class="pos-relative">Relative</div>
+            <div class="pos-parent">
+            Parent (relative)
+            <div class="pos-absolut">Absolute</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- BAGIAN 4: Flexbox -->
+    <section class="demo-section">
+        <h2>Flexbox Layout</h2>
+        <h3>Justify-content: space-betwen</h3>
+        <div class="flex-demo flex-space-between">
+            <div class="flex-item">Item 1</div>
+            <div class="flex-item">Item 2</div>
+            <div class="flex-item">Item 3</div>
+        </div>
+        <h3>Justify-content: center</h3>
+        <div class="flex-demo flex-center">
+            <div class="flex-item">Item A</div>
+            <div class="flex-item">Item B</div>
+        </div>
+        <h3>flex-direction: column</h3>
+        <div class="flex-demo flex-colum">
+            <div class="flex-item">Atas</div>
+            <div class="flex-item">Tengah</div>
+            <div class="flex-item">Bawah</div>
+        </div>
+    </section>
+
+    <!-- BAGIAN 5: Layout Nyata-->
+    <section class="demo-section">
+        <H2>Layout: navbar + sidebar + knten + Footer</H2>
+    </section>
+
+    <nav class="navbar-demo">
+        <div class="nav-brand">SMK TJP Tuban</div>
+        <ul class="nav-menu">
+            <li><a href="#">Beranda</a></li>
+            <li><a href="#">Profil</a></li>
+            <li><a href="#">Jurusan</a></li>
+            <li><a href="#">Kontak</a></li>
+        </ul>
+    </nav>
+
+    <div class="layout-utama">
+        <aside class="sidebar-demo">
+            <h3>menu sidebar</h3>
+            <ul>
+                <li><a href="#">HTML</a></li>
+                <li><a href="#">CSS</a></li>
+                <li><a href="#">JavaScript</a></li>
+            </ul>
+        </aside>
+        <main class="konten-demo">
+            <h3>Konten Utama</h3>
+            <p>Area ini adalah konten utama halaman. Di layar lebar, konten ini berada di sebelah kanan sidebar. Di layar mobile, konten ini berada di bawah sidebar karena layout berubah menjadi kolom.</p>
+            <div class="kartu-grid">
+        <div class="kartu-item">Kartu 1</div>
+        <div class="kartu-item">Kartu 2</div>
+        <div class="kartu-item">Kartu 3</div>
+    </div>
+</main>
+</div>
+<footer class="footer-demo">
+    <p>&copy; 2024 SMK TJP Tuban</p>
+</footer>
+</body>
+</html>
+</body>
+</html>

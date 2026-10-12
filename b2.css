@@ -1,0 +1,132 @@
+nav a {
+ display: block;
+ padding: 10px 20px;
+ background-color: #1A5276;
+ color: white;
+}
+/* Membuat <li> (block) menjadi inline untuk navbar horizontal */
+nav li {
+display: inline-block;
+margin-right: 10px;
+}
+/* Menyembunyikan elemen */
+.tersembunyi {display: none; }
+/* Hilang dari layout */
+.transparan { visibility: hidden;}
+* {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f1f5f9;
+            margin: 0;
+            padding: 20px;
+            color: #333;
+        }
+
+        header {
+            background: #2563eb;
+            color: white;
+            text-align: center;
+            padding: 25px;
+            border-radius: 12px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 25px auto;
+        }
+
+        .card {
+            background: white;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px #00000015;
+        }
+
+        h2 {
+            color: #2563eb;
+        }
+
+        /* 1. BLOCK */
+        .block {
+            display: block;
+            background: #2563eb;
+            color: white;
+            padding: 15px;
+            margin: 5px 0;
+        }
+
+        /* 2. INLINE */
+        .inline {
+            display: inline;
+            background: #16a34a;
+            color: white;
+            padding: 10px;
+        }
+
+        /* 3. INLINE-BLOCK */
+        .inline-block {
+            display: inline-block;
+            width: 130px;
+            background: #f59e0b;
+            color: white;
+            padding: 20px;
+            margin: 5px;
+            text-align: center;
+        }
+
+        /* 4. FLEX */
+        .flex-container {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            background: #e2e8f0;
+            padding: 10px;
+        }
+
+        .flex-container div {
+            flex: 1;
+            min-width: 100px;
+            background: #9333ea;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        /* 5. GRID */
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+        }
+
+        .grid-container div {
+            background: #db2777;
+            color: white;
+            padding: 25px;
+            text-align: center;
+        }
+
+        /* 6. NONE */
+        .none {
+            display: none;
+        }
+
+        .keterangan {
+            background: #eff6ff;
+            padding: 12px;
+            border-left: 4px solid #2563eb;
+            line-height: 1.6;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: #64748b;
+        }
+        .warna {
+          color: #f59e0b;
+        }
