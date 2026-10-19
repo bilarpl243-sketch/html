@@ -1,0 +1,226 @@
+/* ===== CSS VARIABLES ===== */
+:root {
+  --warna-utama: #1A5276;
+  --warna-sekunder: #2E86C1;
+  --warna-aksen: #AED6F1;
+  --warna-emas: #D4AC0D;
+  --warna-teks: #2C3E50;
+  --warna-bg: #F8F9FA;
+  --bayangan: 0 2px 12px rgba(0,0,0,0.08);
+  --bayangan-besar: 0 8px 30px rgba(0,0,0,0.15);
+  --radius: 10px;
+  --durasi: 0.3s;
+  --font: 'Poppins', Arial, sans-serif;
+}
+
+/* ===== RESET & BASE ===== */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; } /* Scroll halus ke anchor */
+body {
+  font-family: var(--font);
+  color: var(--warna-teks);
+  background: var(--warna-bg);
+  line-height: 1.7;
+}
+
+/* ===== UTILITIES ===== */
+.container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+.section { padding: 80px 0; }
+.section-alt { background: white; }
+
+.section-header { text-align: center; margin-bottom: 48px; }
+.section-judul {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--warna-utama);
+  margin-bottom: 12px;
+}
+.section-judul::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 4px;
+  background: var(--warna-emas);
+  margin: 12px auto 0;
+  border-radius: 2px;
+}
+.section-sub { color: #666; font-size: 1.05rem; }
+
+/* ===== TOMBOL ===== */
+.tombol {
+  display: inline-block;
+  padding: 12px 28px;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  text-decoration: none;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: all var(--durasi) ease;
+}
+.tombol-primer {
+  background: var(--warna-emas);
+  color: var(--warna-utama);
+}
+.tombol-primer:hover {
+  background: #F1C40F;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(212,172,13,0.4);
+}
+.tombol-sekunder {
+  background: transparent;
+  color: white;
+  border-color: white;
+}
+.tombol-sekunder:hover {
+  background: white;
+  color: var(--warna-utama);
+}
+
+/* ===== NAVBAR ===== */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: var(--warna-utama);
+  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+}
+
+.nav-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 64px;
+}
+
+.nav-brand {
+  color: white;
+  font-size: 1.15rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.nav-menu {
+  display: flex;
+  list-style: none;
+  gap: 4px;
+}
+
+.nav-link {
+  color: rgba(255, 255, 255, 0.85);
+  text-decoration: none;
+  padding: 8px 14px;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: all var(--durasi) ease;
+}
+
+.nav-link:hover, .nav-link.active {
+  background: rgba(255, 255, 255, 0.15);
+  color: white;
+}
+
+.nav-cta {
+  background: var(--warna-emas);
+  color: var(--warna-utama) !important;
+  font-weight: 700;
+}
+
+.nav-cta:hover {
+  background: #F1C40F;
+  transform: translateY(-1px);
+}
+
+
+/* ===== HERO ===== */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.hero {
+  min-height: 100vh;
+  background: linear-gradient(135deg, var(--warna-utama) 0%, var(--warna-sekunder) 60%, #5DADE2 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 80px 24px 40px;
+}
+
+.hero-konten {
+  max-width: 720px;
+}
+
+.hero-badge {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  padding: 6px 18px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  margin-bottom: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  animation: fadeInUp 0.6s ease 0.1s both;
+}
+
+.hero-judul {
+  font-size: clamp(2rem, 5vw, 3.2rem);
+  font-weight: 700;
+  color: white;
+  line-height: 1.25;
+  margin-bottom: 20px;
+  animation: fadeInUp 0.6s ease 0.2s both;
+}
+
+.hero-sub {
+  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.85);
+  margin-bottom: 36px;
+  line-height: 1.7;
+  animation: fadeInUp 0.6s ease 0.3s both;
+}
+
+.hero-tombol {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+  animation: fadeInUp 0.6s ease 0.4s both;
+}
+
+
+/* ===== STATS ===== */
+.stats {
+  background: var(--warna-utama);
+  padding: 32px 0;
+}
+
+.stats-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.stat-item {
+  text-align: center;
+  color: white;
+}
+
+.stat-angka {
+  display: block;
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: var(--warna-emas);
+  line-height: 1;
+}
