@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal Karir & Informasi PKL / Lowongan Kerja</title>
+    <!-- FontAwesome & Google Fonts -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* --- GLOBAL STYLES --- */
+        :root {
+            --primary-color: #0d6efd;
+            --secondary-color: #0b5ed7;
+            --dark-color: #212529;
+            --light-color: #f8f9fa;
+            --accent-color: #ffc107;
+            --gray-color: #6c757d;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background-color: #f4f7fe;
+            color: var(--dark-color);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .section-title {
+            text-align: center;
+            margin: 50px 0 30px;
+            font-size: 2rem;
+            color: var(--dark-color);
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background: var(--primary-color);
+            margin: 8px auto 0;
+            border-radius: 2px;
+        }
+
+        /* --- 1. BANNER HERO --- */
+        .hero-banner {
+            background: linear-gradient(135deg, rgba(13, 110, 253, 0.9), rgba(11, 94, 215, 0.95)), 
+                        url('https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=1350&q=80') center/cover no-repeat;
+            color: white;
+            padding: 80px 20px;
+            text-align: center;
+            border-radius: 0 0 25px 25px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+        }
+
+        .hero-banner h1 {
+            font-size: 2.8rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        .hero-banner p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 25px;
+            opacity: 0.9;
+        }
+
+        .hero-btn {
+            display: inline-block;
+            background-color: var(--accent-color);
+            color: var(--dark-color);
+            padding: 12px 30px;
+            font-weight: 600;
+            border-radius: 50px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        }
+
+        .hero-btn:hover {
+            transform: translateY(-3px);
+            background-color: #e0a800;
+        }
+
+        /* --- 2. PERUSAHAAN MITRA CARDS --- */
+        .partner-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+        }
+
+        .partner-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .partner-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+
+        .partner-img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin: 0 auto 15px;
+            border: 3px solid var(--primary-color);
+        }
+
+        .partner-card h3 {
+            font-size: 1.2rem;
+            margin-bottom: 5px;
+        }
+
+        .partner-card span {
+            color: var(--gray-color);
+            font-size: 0.9rem;
+            display: block;
+            margin-bottom: 15px;
+        }
+
+        .partner-badge {
+            background-color: #e7f1ff;
+            color: var(--primary-color);
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        /* --- 3. TABEL JADWAL & KUALIFIKASI --- */
+        .table-responsive {
+            overflow-x: auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            padding: 10px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
+        }
+
+        th, td {
+            padding: 15px 20px;
+            border-bottom: 1px solid #e9ecef;
+        }
+
+        th {
+            background-color: var(--primary-color);
+            color: white;
+            font-weight: 600;
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+
+        tr:hover {
+            background-color: #f8f9fa;
+        }
+
+        .badge-status {
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        .status-open { background: #d1e7dd; color: #0f5132; }
+        .status-soon { background: #fff3cd; color: #664d03; }
+
+        /* --- 4. VIDEO MOTIVASI --- */
+        .video-wrapper {
+            background: white;
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .responsive-video {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+            height: 0;
+            overflow: hidden;
+            border-radius: 10px;
+        }
+
+        .responsive-video iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        /* --- 5. FORM PENDAFTARAN --- */
+        .form-section {
+            background: white;
+            border-radius: 15px;
+            padding: 40px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            max-width: 800px;
+            margin: 0 auto 60px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ced4da;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--primary-color);
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .btn-submit {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 14px 30px;
+            font-size: 1rem;
+            font-weight: 600;
+            border-radius: 8px;
+            cursor: pointer;
+            width: 100%;
+            transition: background 0.3s;
+        }
+
+        .btn-submit:hover {
+            background-color: var(--secondary-color);
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: var(--dark-color);
+            color: white;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive Breakpoints */
+        @media (max-width: 768px) {
+            .hero-banner h1 { font-size: 2rem; }
+            .form-row { grid-template-columns: 1fr; }
+            .form-section { padding: 25px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 1. BANNER INFORMASI / HERO SECTION -->
+    <header class="hero-banner">
+        <div class="container">
+            <h1>Raih Karir Impian & Pengalaman PKL Terbaik</h1>
+            <p>Bergabunglah bersama mitra industri terkemuka. Buka peluang kerja profesional dan kembangkan keahlian Anda di sini.</p>
+            <a href="#form-pendaftaran" class="hero-btn"><i class="fas fa-paper-plane"></i> Daftar Sekarang</a>
+        </div>
+    </header>
+
+    <div class="container">
+        
+        <!-- 2. PROFIL PERUSAHAAN MITRA INDUSTRI -->
+        <section>
+            <h2 class="section-title">Mitra Industri Kami</h2>
+            <div class="partner-grid">
+                <!-- Card 1 -->
+                <div class="partner-card">
+                    <img src="https://images.unsplash.com/photo-1549923746-c502d488b3ea?auto=format&fit=crop&w=300&q=80" alt="PT Tech Innovate" class="partner-img">
+                    <h3>PT Tech Innovate</h3>
+                    <span>Teknologi & Perangkat Lunak</span>
+                    <span class="partner-badge">Menerima PKL & Kerja</span>
+                </div>
+                <!-- Card 2 -->
+                <div class="partner-card">
+                    <img src="https://images.unsplash.com/photo-1572021335469-31706a17aaef?auto=format&fit=crop&w=300&q=80" alt="Nusantara Digital" class="partner-img">
+                    <h3>Nusantara Creative</h3>
+                    <span>Media & Desain Grafis</span>
+                    <span class="partner-badge">Menerima PKL</span>
+                </div>
+                <!-- Card 3 -->
+                <div class="partner-card">
+                    <img src="https://images.unsplash.com/photo-1560179707-f14e90ef3623?auto=format&fit=crop&w=300&q=80" alt="Global Synergy" class="partner-img">
+                    <h3>Global Synergy Corp</h3>
+                    <span>Manajemen & Keuangan</span>
+                    <span class="partner-badge">Lowongan Kerja</span>
+                </div>
+                <!-- Card 4 -->
+                <div class="partner-card">
+                    <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=300&q=80" alt="Auto Mandiri" class="partner-img">
+                    <h3>Auto Mandiri Teknik</h3>
+                    <span>Manufaktur & Otomotif</span>
+                    <span class="partner-badge">Menerima PKL & Kerja</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. TABEL JADWAL REKRUTMEN & SYARAT KUALIFIKASI -->
+        <section>
+            <h2 class="section-title">Jadwal Rekrutmen & Kualifikasi</h2>
+            <div class="table-responsive">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Posisi / Program</th>
+                            <th>Perusahaan</th>
+                            <th>Kualifikasi / Syarat</th>
+                            <th>Jadwal Pendaftaran</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Frontend Developer (PKL)</strong></td>
+                            <td>PT Tech Innovate</td>
+                            <td>Siswa/Mahasiswa IT, menguasai HTML/CSS/JS Dasar, membawa laptop sendiri.</td>
+                            <td>10 Jan - 25 Feb 2026</td>
+                            <td><span class="badge-status status-open">Dibuka</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Graphic Designer (Karyawan)</strong></td>
+                            <td>Nusantara Creative</td>
+                            <td>Lulusan SMK/D3/S1 Desain, melampirkan Portofolio, menguasai Photoshop/Illustrator.</td>
+                            <td>01 Feb - 15 Feb 2026</td>
+                            <td><span class="badge-status status-open">Dibuka</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Staff Administrasi (PKL)</strong></td>
+                            <td>Global Synergy Corp</td>
+                            <td>Jurusan Otomatisasi Perkantoran/Akuntansi, Teliti, Menguasai MS Office.</td>
+                            <td>15 Feb - 10 Mar 2026</td>
+                            <td><span class="badge-status status-soon">Segera</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- 4. VIDEO MOTIVASI KERJA -->
+        <section>
+            <h2 class="section-title">Motivasi & Persiapan Karir</h2>
+            <div class="video-wrapper">
+                <div class="responsive-video">
+                    <!-- Ganti ID youtube di bawah (dQw4w9WgXcQ) dengan ID video yang diinginkan -->
+                    <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Video Motivasi Kerja" allowfullscreen></iframe>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. FORM PENDAFTARAN ONLINE -->
+        <section id="form-pendaftaran">
+            <h2 class="section-title">Formulir Pendaftaran Online</h2>
+            <div class="form-section">
+                <form id="recruitmentForm" onsubmit="handleFormSubmit(event)">
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="nama">Nama Lengkap *</label>
+                            <input type="text" id="nama" class="form-control" placeholder="Masukkan nama lengkap" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Alamat Email *</label>
+                            <input type="email" id="email" class="form-control" placeholder="nama@email.com" required>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="telepon">Nomor WhatsApp / HP *</label>
+                            <input type="tel" id="telepon" class="form-control" placeholder="08xxxxxxxxxx" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="jenis_pendaftaran">Kategori Pendaftaran *</label>
+                            <select id="jenis_pendaftaran" class="form-control" required>
+                                <option value="">-- Pilih Jenis --</option>
+                                <option value="PKL">Praktik Kerja Lapangan (PKL)</option>
+                                <option value="Kerja">Lowongan Kerja (Karyawan)</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="posisi">Posisi / Perusahaan yang Dituju *</label>
+                        <select id="posisi" class="form-control" required>
+                            <option value="">-- Pilih Posisi --</option>
+                            <option value="PT Tech Innovate - Frontend Developer">PT Tech Innovate - Frontend Developer (PKL)</option>
+                            <option value="Nusantara Creative - Graphic Designer">Nusantara Creative - Graphic Designer</option>
+                            <option value="Global Synergy Corp - Staff Admin">Global Synergy Corp - Staff Admin</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="berkas">Upload CV / Berkas Lamaran (PDF, Maks 5MB) *</label>
+                        <input type="file" id="berkas" class="form-control" accept=".pdf" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="catatan">Pesan Singkat / Motivasi</label>
+                        <textarea id="catatan" class="form-control" rows="4" placeholder="Tuliskan alasan singkat mengapa Anda cocok untuk posisi ini..."></textarea>
+                    </div>
+
+                    <button type="submit" class="btn-submit"><i class="fas fa-paper-plane"></i> Kirim Lamaran</button>
+                </form>
+            </div>
+        </section>
+
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>&copy; 2026 Portal Rekrutmen & PKL Mitra Industri. All Rights Reserved.</p>
+    </footer>
+
+    <!-- JAVASCRIPT FOR INTERACTIVITY -->
+    <script>
+        function handleFormSubmit(event) {
+            event.preventDefault(); // Mencegah reload halaman
+            
+            // Ambil data form sederhana
+            const nama = document.getElementById('nama').value;
+            const posisi = document.getElementById('posisi').value;
+
+            // Tampilkan alert (Bisa diganti dengan fungsi AJAX/Fetch ke backend)
+            alert(`Terima kasih ${nama}!\nLamaran Anda untuk posisi "${posisi}" telah berhasil terkirim.`);
+
+            // Reset form
+            document.getElementById('recruitmentForm').reset();
+        }
+    </script>
+</body>
+</html>
